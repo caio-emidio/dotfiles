@@ -36,3 +36,5 @@ alias lt='ls --tree'
 # Enable pbcopy and paste
 alias pbcopy="clip.exe"
 alias pbpaste="powershell.exe -command 'Get-Clipboard' | head -n -1"
+# Use vscode insiders
+alias code="code-insiders"
