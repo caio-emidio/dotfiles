@@ -2,17 +2,17 @@
 # ---
 #
 # Named Directories:
-hash -d home=/mnt/c/Users/arthu
+$IS_WSL && hash -d home=/mnt/c/Users/arthu
 hash -d dev=~/software-development
 # Aliases
-alias home="cd ~home"
+$IS_WSL && alias home="cd ~home"
 alias dev="cd ~dev"
 alias reload="source ~/.zshrc"
 alias install="sudo apt-get install"
-alias zshconfig="code $HOME/.zshrc"
+if_exists code && alias zshconfig="code $HOME/.zshrc"
 alias delete="rm -rf"
 alias myip="curl http://ipecho.net/plain; echo"
-alias explorer="/mnt/c/Windows/explorer.exe"
+$IS_WSL && alias explorer="/mnt/c/Windows/explorer.exe"
 # Git Aliases
 alias gi="git init"
 alias gc="git commit -m"
@@ -25,16 +25,16 @@ alias gss="git status -s"
 alias gd="git diff"
 alias gds="git diff --stat"
 # Docker Aliases
-alias drai="docker rmi $(docker images -a -q)"
-alias drac="docker rm $(docker ps -a -q)"
+if_exists docker && alias drai="docker rmi $(docker images -a -q)"
+if_exists docker && alias drac="docker rm $(docker ps -a -q)"
 # LSD Config
-alias ls='lsd'
+if_exists lsd && alias ls='lsd'
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
-alias lt='ls --tree'
+if_exists lsd && alias lt='ls --tree'
 # Enable pbcopy and paste
-alias pbcopy="clip.exe"
-alias pbpaste="powershell.exe -command 'Get-Clipboard' | head -n -1"
+! $IS_MACOS && if_exists xclip && alias pbcopy='xclip -selection clipboard'
+! $IS_MACOS && if_exists xclip && alias pbpaste='xclip -selection clipboard -o'
 # Use vscode insiders
 alias code="code-insiders"

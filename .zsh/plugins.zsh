@@ -3,8 +3,6 @@
 plugins=(
     git
     autojump
-    zsh-syntax-highlighting
-    zsh-autosuggestions
     jsontools
     node
     web-search
