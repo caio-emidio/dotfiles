@@ -21,3 +21,4 @@ $IS_WSL && [[ -f ~/.zsh/wsl2fix.zsh ]] && source ~/.zsh/wsl2fix.zsh
 [[ -f ~/.zsh/exporters.zsh ]] && source ~/.zsh/exporters.zsh
 
 # --->
+eval "$(starship init zsh)"

@@ -5,7 +5,7 @@ command_timeout = 1000                 # Change command timeout from 500 to 1000
 format = """$username $env_var $all""" # Add custom formatting before other stuff
 
 # Add color palette
-palette = "thanos"
+palette = "loki"
 
 [palettes.thanos]
     space = "#00A1E4"
@@ -16,6 +16,16 @@ palette = "thanos"
     time = "##58EBD7"
     supernova = "#F8F8F0"
     mind = "#FFE900"
+
+[palettes.loki]
+    space = "#6EC729"
+    reality = "#FF206E"
+    power = "#f94000"
+    soul = "#FABC2A"
+    vision = "#f7c172"
+    time = "#535353"
+    supernova = "#F8F8F0"
+    mind = "#ebf489"
 
 
 # Drop ugly default prompt characters
